@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All Posts</title>
+    <link rel="stylesheet" href="style.css"> <!-- Relative path -->
+</head>
+<body>
+    <h1>Quora Posts</h1>
+    <% for (let post of posts) { %>
+        <div class="post">
+            <h3 class="username">@<%= post.username %></h3>
+            <p class="content"><%= post.content %></p>
+            <a href="/posts/<%= post.id %>">See in Detail</a>
+            <a href="/posts/<%= post.id %>/edit">Edit</a>
+            <br> <br>
+          <form action="/posts/<%= post.id %>?_method=DELETE" method="post">
+            <button>Delete Post</button>
+        </form>
+        </div>
+    <% } %>
+
+    <br>
+    <br>
+    <a href="/posts/new">Create New Post</a>
+</body>
+</html>

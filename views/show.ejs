@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post in Details</title>
+    <link rel="stylesheet" href="public/stylesheet.css">
+
+</head>
+<body>
+    <h2>Here is your post in detail</h2>
+    <!-- Render post ID, EJS will render an empty string if post or post.id is undefined -->
+    <p>posts:id <%= post && post.id %></p>
+    
+    <div class="post">
+        <!-- Render user username, EJS will render an empty string if user or user.username is undefined -->
+        <h3 class="user">@<%= user && user.username %></h3>
+        
+        <!-- Render post content, EJS will render an empty string if post or post.content is undefined -->
+        <h4><%= post && post.content %></h4>
+    </div>
+</body>
+</html>
